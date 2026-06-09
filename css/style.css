@@ -267,3 +267,69 @@ footer{
     display:none;
 }
 }
+/* PETALOS */
+
+#petals-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+}
+
+.petal{
+    position:fixed;
+    top:-50px;
+    font-size:18px;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+    }
+}
+
+/* PARTICULAS DORADAS */
+
+#particles-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#d4af37;
+    opacity:.7;
+    animation:floatParticle 6s infinite ease-in-out;
+}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:translateY(0px);
+        opacity:.2;
+    }
+
+    50%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:translateY(-40px);
+        opacity:.2;
+    }
+
+}
