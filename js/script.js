@@ -51,20 +51,20 @@ function createPetal() {
   const petal = document.createElement("div");
 
   petal.classList.add("petal");
-  petal.innerHTML = "🌸";
 
   petal.style.left = Math.random() * 100 + "vw";
-  petal.style.animationDuration = (5 + Math.random() * 8) + "s";
+  petal.style.animationDuration = (6 + Math.random() * 6) + "s";
   petal.style.opacity = 0.4 + Math.random() * 0.6;
+  petal.style.transform = `scale(${0.6 + Math.random()})`;
 
   document.body.appendChild(petal);
 
   setTimeout(() => {
     petal.remove();
-  }, 13000);
+  }, 12000);
 }
 
-setInterval(createPetal, 700);
+setInterval(createPetal, 500);
 
 
 // =====================
