@@ -5,13 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const invitado = params.get("invitado");
 
-  if (invitado) {
-    const guestName = document.getElementById("guest-name");
+  const guestName = document.getElementById("guest-name");
 
-    if (guestName) {
-      guestName.innerText =
-        `${invitado}, nos sentimos muy felices de compartir este día contigo.`;
-    }
+  if (invitado && guestName) {
+    guestName.innerText =
+      `${invitado}, nos sentimos muy felices de compartir este día contigo.`;
   }
 
   // Cuenta regresiva
@@ -28,23 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const d = document.getElementById("days");
-    const h = document.getElementById("hours");
-    const m = document.getElementById("minutes");
-    const s = document.getElementById("seconds");
-
-    if (d) d.innerText = days;
-    if (h) h.innerText = hours;
-    if (m) m.innerText = minutes;
-    if (s) s.innerText = seconds;
+    if (document.getElementById("days")) document.getElementById("days").innerText = days;
+    if (document.getElementById("hours")) document.getElementById("hours").innerText = hours;
+    if (document.getElementById("minutes")) document.getElementById("minutes").innerText = minutes;
+    if (document.getElementById("seconds")) document.getElementById("seconds").innerText = seconds;
 
   }, 1000);
 });
 
 
-// =====================
 // MENÚ SCROLL
-// =====================
 window.addEventListener("scroll", () => {
   const navbar = document.getElementById("navbar");
 
@@ -58,42 +49,11 @@ window.addEventListener("scroll", () => {
 });
 
 
-// =====================
-// PETALOS REALES (IMAGEN)
-// =====================
-function createPetal() {
-  const petal = document.createElement("img");
-
-  petal.src = "petal.png"; // 👈 IMPORTANTE: tu archivo está en la raíz
-  petal.classList.add("petal");
-
-  const size = 15 + Math.random() * 25;
-
-  petal.style.left = Math.random() * 100 + "vw";
-  petal.style.width = size + "px";
-  petal.style.height = "auto";
-
-  petal.style.animationDuration = (6 + Math.random() * 6) + "s";
-  petal.style.opacity = 0.5 + Math.random() * 0.5;
-  petal.style.transform = `rotate(${Math.random() * 360}deg)`;
-
-  document.body.appendChild(petal);
-
-  setTimeout(() => {
-    petal.remove();
-  }, 13000);
-}
-
-setInterval(createPetal, 450);
-
-
-// =====================
-// PARTICULAS DORADAS
-// =====================
+// PARTICULAS DORADAS GRANDES
 const particlesContainer = document.getElementById("particles-container");
 
 if (particlesContainer) {
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 40; i++) {
     const particle = document.createElement("div");
 
     particle.classList.add("particle");
