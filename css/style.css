@@ -1,3 +1,269 @@
+:root{
+    --gold:#c7a86b;
+    --beige:#f8f2ea;
+    --cream:#fffdf9;
+    --brown:#7a6348;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    background:#f8f2ea;
+    font-family:'Poppins',sans-serif;
+    background:var(--cream);
+    color:#444;
+    overflow-x:hidden;
+}
+
+#navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    transition:.4s;
+}
+
+#navbar.scrolled{
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(10px);
+    box-shadow:0 3px 20px rgba(0,0,0,.08);
+}
+
+.logo{
+    font-family:'Great Vibes',cursive;
+    font-size:2rem;
+    color:var(--gold);
+}
+
+#navbar ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+#navbar a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+}
+
+#navbar.scrolled a{
+    color:#555;
+}
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.30)),
+    url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    position:relative;
+}
+
+.hero-content{
+    max-width:900px;
+    padding:20px;
+}
+
+.hero h1{
+    font-family:'Great Vibes',cursive;
+    font-size:7rem;
+    font-weight:normal;
+}
+
+.hero h2{
+    font-size:1.8rem;
+    font-weight:300;
+    margin-top:15px;
+}
+
+.hero-text{
+    margin-top:30px;
+    line-height:1.8;
+}
+
+.date-box{
+    margin-top:30px;
+    letter-spacing:4px;
+}
+
+.main-button,
+.location-btn,
+.confirm-btn{
+    display:inline-block;
+    margin-top:30px;
+    background:var(--gold);
+    color:white;
+    text-decoration:none;
+    padding:16px 35px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.main-button:hover,
+.location-btn:hover,
+.confirm-btn:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    padding:100px 10%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:var(--brown);
+    font-size:2.5rem;
+}
+
+.countdown-section{
+    background:var(--beige);
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    background:white;
+    padding:25px;
+    min-width:130px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.time-box span{
+    display:block;
+    font-size:2.5rem;
+    color:var(--gold);
+    font-weight:bold;
+}
+
+.story{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.story img{
+    width:100%;
+    border-radius:25px;
+}
+
+.story-text p{
+    margin-bottom:20px;
+    line-height:1.9;
+}
+
+.timeline{
+    background:var(--beige);
+}
+
+.timeline-item{
+    background:white;
+    padding:25px;
+    margin:20px auto;
+    max-width:700px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 20px rgba(0,0,0,.05);
+}
+
+.dress-card{
+    background:var(--beige);
+    max-width:600px;
+    margin:auto;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.colors{
+    margin-top:15px;
+    font-weight:bold;
+    color:#9c3f3f;
+}
+
+#regalos{
+    text-align:center;
+}
+
+.gift-envelope{
+    font-size:6rem;
+    margin-bottom:20px;
+}
+
+#confirmacion{
+    text-align:center;
+    background:var(--beige);
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:#f2ece3;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:4rem;
+}
+
+.story{
+    grid-template-columns:1fr;
+}
+
+#navbar ul{
+    display:none;
+}
 }
