@@ -1,3 +1,7 @@
+alert("JavaScript funcionando");
+// Cambio de color del menú al hacer scroll
+window.addEventListener("scroll", () => {
+...
 // Cambio de color del menú al hacer scroll
 window.addEventListener("scroll", () => {
   const navbar = document.getElementById("navbar");
