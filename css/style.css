@@ -22,6 +22,10 @@ body{
     overflow-x:hidden;
 }
 
+/* =====================
+   NAVBAR
+===================== */
+
 #navbar{
     position:fixed;
     top:0;
@@ -34,10 +38,20 @@ body{
     transition:.4s;
 }
 
+#navbar a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+}
+
 #navbar.scrolled{
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(12px);
     box-shadow:0 3px 20px rgba(0,0,0,.08);
+}
+
+#navbar.scrolled a{
+    color:#555;
 }
 
 .logo{
@@ -52,20 +66,14 @@ body{
     list-style:none;
 }
 
-#navbar a{
-    text-decoration:none;
-    color:#fff;
-    font-weight:500;
-}
-
-#navbar.scrolled a{
-    color:#555;
-}
+/* =====================
+   HERO
+===================== */
 
 .hero{
     min-height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.30)),
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
     url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=80");
     background-size:cover;
     background-position:center;
@@ -75,6 +83,7 @@ body{
     text-align:center;
     color:white;
     position:relative;
+    z-index:1;
 }
 
 .hero-content{
@@ -104,6 +113,10 @@ body{
     letter-spacing:4px;
 }
 
+/* =====================
+   BOTONES
+===================== */
+
 .main-button,
 .location-btn,
 .confirm-btn{
@@ -123,6 +136,10 @@ body{
     transform:translateY(-3px);
 }
 
+/* =====================
+   SECCIONES
+===================== */
+
 section{
     padding:100px 10%;
 }
@@ -133,6 +150,10 @@ h2{
     color:var(--brown);
     font-size:2.5rem;
 }
+
+/* =====================
+   COUNTDOWN
+===================== */
 
 .countdown-section{
     background:var(--beige);
@@ -161,6 +182,10 @@ h2{
     font-weight:bold;
 }
 
+/* =====================
+   STORY
+===================== */
+
 .story{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -178,6 +203,10 @@ h2{
     line-height:1.9;
 }
 
+/* =====================
+   TIMELINE
+===================== */
+
 .timeline{
     background:var(--beige);
 }
@@ -190,6 +219,10 @@ h2{
     border-radius:20px;
     text-align:center;
 }
+
+/* =====================
+   GALLERY
+===================== */
 
 .gallery-grid{
     display:grid;
@@ -204,6 +237,10 @@ h2{
     border-radius:20px;
 }
 
+/* =====================
+   CARDS
+===================== */
+
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -217,6 +254,10 @@ h2{
     text-align:center;
     box-shadow:0 10px 20px rgba(0,0,0,.05);
 }
+
+/* =====================
+   DRESS CODE
+===================== */
 
 .dress-card{
     background:var(--beige);
@@ -233,6 +274,10 @@ h2{
     color:#9c3f3f;
 }
 
+/* =====================
+   REGALOS
+===================== */
+
 #regalos{
     text-align:center;
 }
@@ -242,16 +287,28 @@ h2{
     margin-bottom:20px;
 }
 
+/* =====================
+   CONFIRMACION
+===================== */
+
 #confirmacion{
     text-align:center;
     background:var(--beige);
 }
+
+/* =====================
+   FOOTER
+===================== */
 
 footer{
     text-align:center;
     padding:40px;
     background:#f2ece3;
 }
+
+/* =====================
+   RESPONSIVE
+===================== */
 
 @media(max-width:768px){
 
@@ -267,7 +324,10 @@ footer{
     display:none;
 }
 }
-/* PETALOS */
+
+/* =====================
+   PETALOS (REALES)
+===================== */
 
 #petals-container{
     position:fixed;
@@ -276,25 +336,25 @@ footer{
     width:100%;
     height:100%;
     pointer-events:none;
-    z-index:1;
+    z-index:2;
 }
 
 .petal{
     position:fixed;
-    top:-50px;
-    font-size:18px;
+    top:-10px;
+    width:14px;
+    height:14px;
+    background:linear-gradient(135deg,#ffb6c1,#fff);
+    border-radius:60% 40% 60% 40%;
+    opacity:0.8;
+    pointer-events:none;
     animation:fall linear forwards;
+    filter:blur(.2px);
 }
 
-@keyframes fall{
-    to{
-        transform:
-        translateY(110vh)
-        rotate(360deg);
-    }
-}
-
-/* PARTICULAS DORADAS */
+/* =====================
+   PARTICULAS DORADAS
+===================== */
 
 #particles-container{
     position:fixed;
@@ -316,41 +376,28 @@ footer{
     animation:floatParticle 6s infinite ease-in-out;
 }
 
+/* =====================
+   ANIMACIONES
+===================== */
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
 @keyframes floatParticle{
-
-    0%{
-        transform:translateY(0px);
-        opacity:.2;
-    }
-
-    50%{
-        opacity:.8;
-    }
-
-    100%{
-        transform:translateY(-40px);
-        opacity:.2;
-    }
-
+    0%{transform:translateY(0);opacity:.2;}
+    50%{opacity:.8;}
+    100%{transform:translateY(-40px);opacity:.2;}
 }
+
+/* =====================
+   NAV ACTIVO
+===================== */
+
 #navbar.activo {
-  background: rgba(0, 0, 0, 0.8);
-  transition: 0.3s;
-}
-.petal {
-  position: fixed;
-  top: -10px;
-  width: 15px;
-  height: 15px;
-  background: pink;
-  border-radius: 60% 40% 60% 40%;
-  opacity: 0.7;
-  pointer-events: none;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-  }
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
