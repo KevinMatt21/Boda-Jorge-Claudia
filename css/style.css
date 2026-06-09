@@ -73,7 +73,7 @@ body{
 }
 
 .countdown-section h3{
-    font-size:3rem;
+    font-size:3.2rem;
     margin-bottom:20px;
     color:var(--brown);
 }
@@ -135,11 +135,11 @@ h2{
 
 .particle{
     position:absolute;
-    width:10px;
-    height:10px;
+    width:12px;
+    height:12px;
     border-radius:50%;
     background:radial-gradient(circle,#ffd700,#c7a86b);
-    box-shadow:0 0 10px rgba(199,168,107,.7);
+    box-shadow:0 0 12px rgba(199,168,107,.8);
     animation:float 6s infinite ease-in-out;
 }
 
@@ -161,12 +161,14 @@ h2{
     display:flex;
     align-items:center;
     gap:10px;
+    font-weight:500;
 }
 
 .color-circle{
-    width:20px;
-    height:20px;
+    width:26px;
+    height:26px;
     border-radius:50%;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
 }
 
 .white{background:#fff;}
@@ -176,11 +178,6 @@ h2{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-.hero h1{
-    font-size:3rem;
-}
-
-.countdown-section h3{
-    font-size:2rem;
-}
+.hero h1{font-size:3rem;}
+.countdown-section h3{font-size:2.2rem;}
 }
