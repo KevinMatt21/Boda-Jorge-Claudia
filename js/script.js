@@ -1,5 +1,3 @@
-console.log("JS cargó");
-alert("JS funcionando");
 // Cambio de color del menú al hacer scroll
 window.addEventListener("scroll", () => {
 ...
