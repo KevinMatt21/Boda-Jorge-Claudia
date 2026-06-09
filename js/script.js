@@ -1,3 +1,4 @@
+alert("JS EXTERNO FUNCIONANDO");
 // Cambio de color del menú al hacer scroll
 window.addEventListener("scroll", () => {
 ...
